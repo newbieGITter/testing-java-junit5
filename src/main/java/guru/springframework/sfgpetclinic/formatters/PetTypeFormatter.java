@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Locale;
 
 
+@SuppressWarnings("rawtypes")
 public class PetTypeFormatter implements Formatter {
 
     private final PetTypeService petTypeService;

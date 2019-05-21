@@ -2,7 +2,12 @@ package guru.springframework.sfgpetclinic.model;
 
 public class Person extends BaseEntity {
 
-    public Person(Long id, String firstName, String lastName) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Person(Long id, String firstName, String lastName) {
         super(id);
         this.firstName = firstName;
         this.lastName = lastName;
