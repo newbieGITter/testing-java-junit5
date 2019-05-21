@@ -12,13 +12,21 @@ class PersonTest {
 	}
 
 	@Test
-	void testGetFirstName() {
-		fail("Not yet implemented");
+	void testGroupedAssertions() {
+		Person person = new Person(1L, "Joe", "Buck");
+		
+		assertAll("Test props set", 
+				() -> assertEquals(person.getFirstName(), "Joe"),
+				() -> assertEquals(person.getLastName(), "Buck"));
 	}
 
 	@Test
-	void testGetLastName() {
-		fail("Not yet implemented");
+	void testGroupedAssertions_negativeScenario() {
+		Person person = new Person(1L, "Joe", "Buck");
+		
+		assertAll("Test props set", 
+				() -> assertEquals(person.getFirstName(), "Joee", "First Name failed"),
+				() -> assertEquals(person.getLastName(), "Buckk", "Last Name failed"));
 	}
 
 }
