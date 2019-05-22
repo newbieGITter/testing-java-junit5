@@ -11,6 +11,7 @@ class OwnerTest {
 	static void setUpBeforeClass() throws Exception {
 	}
 
+	// Dependent assertions
 	@Test
 	void testDependentAssertions() {
 		Owner owner = new Owner(1L, "Joe", "Buck");

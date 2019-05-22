@@ -11,6 +11,7 @@ class PersonTest {
 	static void setUpBeforeClass() throws Exception {
 	}
 
+	// Grouped Assertions
 	@Test
 	void testGroupedAssertions() {
 		Person person = new Person(1L, "Joe", "Buck");
