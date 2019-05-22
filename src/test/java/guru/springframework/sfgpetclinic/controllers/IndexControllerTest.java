@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,6 +29,9 @@ class IndexControllerTest {
 		assertEquals("index", indexController.index(), "Wrong view returned");
 		
 		assertEquals("index", indexController.index(), () -> "Another expensive " + "Create me only if you need to");
+		
+		//From AssertJ
+		assertThat(indexController.index()).isEqualTo("index");
 	}
 
 	// Handling Expected Exceptions
