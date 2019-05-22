@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,16 @@ class IndexControllerTest {
 			indexController.oopsHandler();
 		}, "Should throw Value not found exception");
 		
+	}
+	
+	@Test
+	public void testAssumptionTrue() {
+		assumeTrue("Guru".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+	}
+	
+	@Test
+	public void testAssumptionWithTwoStringsIsTrue() {
+		assumeTrue("Guru".equalsIgnoreCase("GURU"));
 	}
 
 }
