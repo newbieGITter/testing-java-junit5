@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 class PersonTest implements ModelTests {
@@ -29,6 +31,13 @@ class PersonTest implements ModelTests {
 		assertAll("Test props set", 
 				() -> assertEquals(person.getFirstName(), "Joee", "First Name failed"),
 				() -> assertEquals(person.getLastName(), "Buckk", "Last Name failed"));
+	}
+	
+	@RepeatedTest(value = 10, name = "{displayName}: {currentRepetition} - {totalRepetitions}")
+	@DisplayName("my repeated test")
+	@Test
+	void myRepeatedTest() {
+		// todo -- impl
 	}
 
 }
