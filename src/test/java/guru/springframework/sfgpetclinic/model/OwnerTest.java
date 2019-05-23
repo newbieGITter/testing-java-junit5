@@ -4,11 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("models")
-class OwnerTest {
+class OwnerTest implements ModelTests {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {

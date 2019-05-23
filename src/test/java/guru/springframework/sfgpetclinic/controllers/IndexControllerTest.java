@@ -15,7 +15,7 @@ import org.junit.jupiter.api.condition.OS;
 
 import guru.springframework.sfgpetclinic.exceptions.ValueNotFoundException;
 
-class IndexControllerTest {
+class IndexControllerTest implements ControllerTests {
 	
 	IndexController indexController;
 

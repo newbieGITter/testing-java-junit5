@@ -13,8 +13,7 @@ import guru.springframework.sfgpetclinic.services.VetService;
 import guru.springframework.sfgpetclinic.services.map.SpecialityMapService;
 import guru.springframework.sfgpetclinic.services.map.VetMapService;
 
-@Tag("controllers")
-class VetControllerTest {
+class VetControllerTest implements ControllerTests {
 	
 	private VetController vetController;
 	
