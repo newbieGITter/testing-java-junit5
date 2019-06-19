@@ -10,6 +10,19 @@ import org.junit.jupiter.api.Test;
 public class CollectionsCopyTest {
 
 	@Test
+	public void shouldThrowException_whenDestHasLessElements() {
+		// Given
+		List<String> src = populateListFrom("India", "Netherlands");
+		List<String> dest = populateListFrom("New Zealand");
+		
+		// When
+		// Then
+		Assertions.assertThatExceptionOfType(IndexOutOfBoundsException.class).isThrownBy(() -> {
+			Collections.copy(dest, src);
+		}).withMessage("Source does not fit in dest");
+	}
+
+	@Test
 	public void shouldChangeNothingInDestList_whensrcListIsEmpty() {
 		// Given
 		List<String> src = populateListFrom();
@@ -22,18 +35,6 @@ public class CollectionsCopyTest {
 		Assertions.assertThat(dest.get(0)).isEqualTo("New Zealand");
 	}
 	
-	@Test
-	public void shouldThrowException_whenDestHasLessElements() {
-		// Given
-		List<String> src = populateListFrom("India", "Netherlands");
-		List<String> dest = populateListFrom("New Zealand");
-
-		// When
-		// Then
-		Assertions.assertThatExceptionOfType(IndexOutOfBoundsException.class).isThrownBy(() -> {
-			Collections.copy(dest, src);
-		}).withMessage("Source does not fit in dest");
-	}
 	
 	@Test
 	public void shouldCopySrcElements_andRemoveDestElements_whenDestHasEqualElements() {
@@ -43,6 +44,7 @@ public class CollectionsCopyTest {
 
 		// When
 		Collections.copy(dest, src);
+		
 		// Then
 		Assertions.assertThat(dest.size()).isEqualTo(2);
 		Assertions.assertThat(dest.get(0)).isEqualTo("India");

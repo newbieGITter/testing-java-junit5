@@ -35,6 +35,19 @@ public class CollectionsFrequencyTest {
 	}
 	
 	@Test
+	public void should_ReturnTwo_whenStringAppearsTwiceInCollection() {
+		// Given
+		List<String> src = populateListFrom("India", "Netherlands", "New Zealand", "India");
+
+		// When
+		int frequency = Collections.frequency(src, "India");
+		
+		// Then
+		Assertions.assertThat(frequency).isEqualTo(2);
+	}
+
+	
+	@Test
 	public void should_ReturnTwo_whenNullAppearsTwiceInCollection() {
 		// Given
 		List<String> src = populateListFrom("India", "Netherlands", "New Zealand", null, null);
