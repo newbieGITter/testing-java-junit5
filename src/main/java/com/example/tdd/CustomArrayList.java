@@ -36,4 +36,18 @@ public class CustomArrayList {
 		return elementData[index];
 	}
 
+	public Object remove(int index) {
+		if(index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index: " + index + ", size: " + size);
+		}
+		Object objToBeRemoved = elementData[index];
+		
+		for(int i = index; i < size - 1; i++) {
+			elementData[i] = elementData[i + 1]; 
+		}
+		size--;
+		
+		return objToBeRemoved;
+	}
+
 }
